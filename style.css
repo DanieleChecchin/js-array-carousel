@@ -8,7 +8,45 @@
 
 /* Utils */
 
-.container{
-    max-width: 1200px;
+.container {
+    max-width: 1000px;
     margin: 0 auto;
+}
+
+#carousel {
+    height: 500px;
+    width: 500px;
+    margin: 30px auto;
+    position: relative;
+}
+
+.gallery {
+    height: 100%;
+}
+
+#carousel img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    display: none;
+}
+
+#carousel img.active {
+    display: block;
+}
+
+#carousel .fa-solid {
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#prev {
+    left: -10%;
+}
+
+#next {
+    right: -10%;
 }

@@ -4,13 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carousel</title>
-    
+
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--CSS-->
     <link rel="stylesheet" href="style.css">
     <!--Javascript-->
     <script defer src="script.js"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <div id="carousel">
+            <i id="prev" class="fa-solid fa-angle-left"></i>
+            <div class="gallery">
+                <img src="Img/01.webp" class="active" alt="spiderman">
+                <img src="Img/02.webp" alt="rocket">
+                <img src="Img/03.webp" alt="fortnite">
+                <img src="Img/04.webp" alt="gatto">
+                <img src="Img/05.webp" alt="avengers">
+            </div>
+            <i id="next" class="fa-solid fa-angle-right"></i>
+        </div>
+    </div>
 </body>
 </html>

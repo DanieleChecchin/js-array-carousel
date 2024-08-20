@@ -28,14 +28,26 @@ images[currentImage].classList.add('active');
 // Next
 nextButton.addEventListener('click', function(){
     images[currentImage].classList.remove('active'); // Tolgo la classe active all'immagine che ce l'ha
+
     currentImage++; // Incremento l'indice, quindi passo all'immagine successiva
+
+    if(currentImage === images.length){  // Controllo se ho superato l'indice massimo dell'array e nel caso riporto l'indice a 0. Così facendo ricomincio il giro
+        currentImage = 0;
+    }
+
     images[currentImage].classList.add('active'); // Aggiungo la classe active all'immagine successiva
 });
 
 // Prev
 prevButton.addEventListener('click', function(){
     images[currentImage].classList.remove('active'); // Tolgo la classe active all'immagine che ce l'ha
+
     currentImage--; // Decremento l'indice, quindi passo all'immagine precedente
+
+    if(currentImage < 0){
+        currentImage = images.length - 1; // Controllo se l'indice dell'array va in negativo (faccio indietro quando sono nella prima img) e nel caso riporto l'indice a 4. Così facendo ricomincio il giro
+    }
+
     images[currentImage].classList.add('active'); // Aggiungo la classe active all'immagine precedente
 });
 

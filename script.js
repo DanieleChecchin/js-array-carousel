@@ -1,7 +1,7 @@
 // FASE DI PREPARAZIONE
 
 // Preparo le sorgenti delle immagini per poterle inserire nel DOM
-const sources = ['img/01.webp', 'img/02.webp', 'img/03.webp', 'img/04.webp', 'img/05.webp']
+const sources = ['img/01.webp', 'img/02.webp', 'img/03.webp', 'img/04.webp', 'img/05.webp'];
 
 // Prendo gli elementi di mio interesse dal DOM
 const prevButton = document.getElementById('prev');
@@ -22,3 +22,21 @@ const images = document.querySelectorAll('#carousel img');
 // Attribuisco la classe active alla prima immagine (come fatto prima su html) per rendere visibile la prima immagine
 let currentImage = 0;
 images[currentImage].classList.add('active');
+
+// EVENTI DINAMICI
+
+// Next
+nextButton.addEventListener('click', function(){
+    images[currentImage].classList.remove('active'); // Tolgo la classe active all'immagine che ce l'ha
+    currentImage++; // Incremento l'indice, quindi passo all'immagine successiva
+    images[currentImage].classList.add('active'); // Aggiungo la classe active all'immagine successiva
+});
+
+// Prev
+prevButton.addEventListener('click', function(){
+    images[currentImage].classList.remove('active'); // Tolgo la classe active all'immagine che ce l'ha
+    currentImage--; // Decremento l'indice, quindi passo all'immagine precedente
+    images[currentImage].classList.add('active'); // Aggiungo la classe active all'immagine precedente
+});
+
+

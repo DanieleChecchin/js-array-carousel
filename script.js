@@ -6,7 +6,8 @@ const sources = ['img/01.webp', 'img/02.webp', 'img/03.webp', 'img/04.webp', 'im
 // Prendo gli elementi di mio interesse dal DOM
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
-const carouselGallery = document.querySelector('.gallery'); // Prendo la galleria dal DOM per poterci generare le immagini dentro
+const carouselGallery = document.querySelector('.gallery'); // Prendo la galleria del carosello dal DOM per poterci generare le immagini dentro
+const thumbGallery = document.getElementById('thumbnails'); // Prendo la galleria delle miniature dal DOM per poterci generare le immagini dentro
 
 // Genero le immagini
 let imgs = ''; // Preparo la stringa vuota
@@ -16,18 +17,22 @@ for(let i = 0; i < sources.length; i++){ // Ciclo una volta per ogni elemento de
 }
 
 carouselGallery.innerHTML = imgs; // Inserisco le immagini nel div gallery
+thumbGallery.innerHTML = imgs; // Inserisco le immagini delle miniature
 
-const images = document.querySelectorAll('#carousel img');
+const images = document.querySelectorAll('#carousel img'); // Raccolgo le immagini del carosello
+const thumbs = document.querySelectorAll('#thumbnails img'); // Raccolgo le immagini delle miniature
 
 // Attribuisco la classe active alla prima immagine (come fatto prima su html) per rendere visibile la prima immagine
 let currentImage = 0;
 images[currentImage].classList.add('active');
+thumbs[currentImage].classList.add('active')
 
 // EVENTI DINAMICI
 
 // Next
 nextButton.addEventListener('click', function(){
     images[currentImage].classList.remove('active'); // Tolgo la classe active all'immagine che ce l'ha
+    thumbs[currentImage].classList.remove('active'); // Tolgo la classe active all'immagine che ce l'ha
 
     currentImage++; // Incremento l'indice, quindi passo all'immagine successiva
 
@@ -36,11 +41,13 @@ nextButton.addEventListener('click', function(){
     }
 
     images[currentImage].classList.add('active'); // Aggiungo la classe active all'immagine successiva
+    thumbs[currentImage].classList.add('active'); // Aggiungo la classe active all'immagine successiva
 });
 
 // Prev
 prevButton.addEventListener('click', function(){
     images[currentImage].classList.remove('active'); // Tolgo la classe active all'immagine che ce l'ha
+    thumbs[currentImage].classList.remove('active'); // Tolgo la classe active all'immagine che ce l'ha
 
     currentImage--; // Decremento l'indice, quindi passo all'immagine precedente
 
@@ -49,6 +56,7 @@ prevButton.addEventListener('click', function(){
     }
 
     images[currentImage].classList.add('active'); // Aggiungo la classe active all'immagine precedente
+    thumbs[currentImage].classList.add('active'); // Aggiungo la classe active all'immagine precedente
 });
 
 

@@ -13,9 +13,11 @@
     margin: 0 auto;
 }
 
+/* CAROUSEL */
+
 #carousel {
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 450px;
     margin: 30px auto;
     position: relative;
 }
@@ -49,4 +51,27 @@
 
 #next {
     right: -10%;
+}
+
+/* THUMBNAILS */
+
+#thumbnails {
+    width: 450px;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#thumbnails img{
+    width: 19%;
+    height: 100%;
+    border-radius: 15px;
+    filter: grayscale(1);
+}
+
+#thumbnails img.active{
+    filter: grayscale(0);
+    box-shadow: 0 0 10px purple;
 }

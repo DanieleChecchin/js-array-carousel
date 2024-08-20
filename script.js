@@ -59,4 +59,22 @@ prevButton.addEventListener('click', function(){
     thumbs[currentImage].classList.add('active'); // Aggiungo la classe active all'immagine precedente
 });
 
+// Per ogni thumbnails
+
+for(let i = 0; i < thumbs.length; i++){
+    const thumbnail = thumbs[i]; // Per ogni singolo thumb
+
+    thumbnail.addEventListener('click', function(){ // Quando clicco su un thumb reagisco all'evento del click
+        images[currentImage].classList.remove('active'); // Tolgo la classe active all'immagine che ce l'ha
+        thumbs[currentImage].classList.remove('active'); // Tolgo la classe active all'immagine che ce l'ha
+
+        // Imposto il valore dell'indice in base al valore del thumb
+        currentImage = i;
+
+        images[currentImage].classList.add('active'); // Aggiungo la classe active all'immagine precedente
+        thumbs[currentImage].classList.add('active'); // Aggiungo la classe active all'immagine precedente
+
+    })
+}
+
 

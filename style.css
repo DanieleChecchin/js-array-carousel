@@ -69,6 +69,13 @@
     height: 100%;
     border-radius: 15px;
     filter: grayscale(1);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+#thumbnails img:hover{
+    transform: translateY(-10px);
+    filter: grayscale(0.5);
 }
 
 #thumbnails img.active{
